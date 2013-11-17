@@ -79,15 +79,17 @@
       {"name": "Jack", "gender": "boy", "quality": "3"},
       {"name": "Julie", "gender": "girl", "quality": "2"}
     ],
-   "template": "[name] created [an excellent, a very good, a good] line drawing.  [Her] shading skills [are well developed, are developing well, are developing] and [she] composed [a highly imaginative, an imaginative, an interesting] and [very well constructed, well constructed, acceptably constructed] geometric tower scene. [She] has [an excellent, a very good, a good] understanding of the elements and principles of design. [name] [produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]."
+    "general": "In the first term, students in Grade Five were introduced to the skills of using line and shading to define shape and form in order to create the illusion of depth. Additionally, students learned to creatively organize their art work using the elements and principles of design. For example, they used geometric shapes in a well balanced imaginative scene. Students also learned to describe the connection between an element of design and a specific artistic purpose using appropriate vocabulary. A variety of assessment tools were used to determine students' progress.",
+   "template": "[name] created [an excellent, a very good, a good] line drawing. [Her] shading skills [are well developed, are developing well, are developing] and [she] composed [a highly imaginative, an imaginative, an interesting] and [very well constructed, well constructed, acceptably constructed] geometric tower scene. [She] has [an excellent, a very good, a good] understanding of the elements and principles of design. [name] [produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]."
   }, 
   "6": {
     "students": [
-      {"name": "Another", "gender": "boy", "quality": "1"},
-      {"name": "Name", "gender": "girl", "quality": "1"},
-      {"name": "To", "gender": "boy", "quality": "1"},
-      {"name": "Test", "gender": "girl", "quality": "1"}
+      {"name": "Jacob", "gender": "boy", "quality": "2"},
+      {"name": "Suraj", "gender": "boy", "quality": "3"},
+      {"name": "Jack", "gender": "boy", "quality": "3"},
+      {"name": "Julie", "gender": "girl", "quality": "2"}
     ],
-    "template": "This is 502. The student's name is [name]. [Her] work is [quality]. [She] should try to improve [her] work. [name] is well behaved."
+    "general": "In the first term, students in Grade Five were introduced to the skills of using line and shading to define shape and form in order to create the illusion of depth. Additionally, students learned to creatively organize their art work using the elements and principles of design. For example, they used geometric shapes in a well balanced imaginative scene. Students also learned to describe the connection between an element of design and a specific artistic purpose using appropriate vocabulary. A variety of assessment tools were used to determine students' progress.",
+    "template": "[name] created [an excellent, a very good, a good] one-point perspective imaginary street scene. [Her] shading skills [are well developed, are developing well, are developing] and [she] composed [a highly imaginative, an imaginative, an interesting] family picture. [She] has [an excellent, a very good, a good] understanding of the elements and principles of design, as exhibited in [her] art quiz. [name] [produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]."
   }
 }

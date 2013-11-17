@@ -4,7 +4,7 @@
 
   var className, grades, students, studentName,
     currentStudent, currentClass, template, templateElement,
-    button, qualityOption, customSentence, anecdoteOutput;
+    button, qualityOption, customSentence, anecdoteOutput, generalComment;
 
   //Create an empty object to hold the JSON data.
   var data = {};
@@ -62,8 +62,9 @@
     });
     studentNameHandler();
     currentClass = data[className.value];
-    template = data[className.value].template
-    templateElement.value = template
+    template = data[className.value].template;
+    generalComment = data[className.value].general;
+    templateElement.value = template;
   }
 
   function studentNameHandler() {
@@ -77,16 +78,11 @@
   }
 
   function makeAnnecdote() {
-    var gender, quality, anecdote, name, words;
+    var gender, quality, anecdote, name;
 
     quality = currentStudent.quality;
     gender = currentStudent.gender;
     name = currentStudent.name;
-    console.log("Name: " + name.value);
-    console.log("Gender: " + gender);
-    console.log("Quality: " + quality);
-    console.log("Sentence: " + customSentence.value);
-    console.log("Template: " + template.value);
     
     //Replace the  [name]
     anecdote = template.split("[name]").join(name);
@@ -141,11 +137,9 @@
       anecdote = anecdote.split("[produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("shows an ability in art but should remember to maintain focus when in class");
     }
     
-    //Add the custom sentence
+    //Build the anecdote
     anecdote += " " + customSentence.value;
-    
-    console.log("Annecdote: " + anecdote);
     anecdote = anecdote.replace(/(\r\n|\n|\r)/gm,"");
-    anecdoteOutput.innerHTML = anecdote;
+    anecdoteOutput.innerHTML = generalComment + "\n\n" + anecdote;
   }
 }());
