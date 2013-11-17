@@ -12,7 +12,7 @@ body {
 #stage {
   margin: 0 auto;
   width: 70%;
-  height: 750px;
+  height: 850px;
   margin-top: 2%;
   background-color: #E8E8E8;
   position: relative;
@@ -30,7 +30,7 @@ body {
   width: 30%;
   
   position: absolute;
-  top: 18.5%;
+  top: 7.5%;
   left: 53%;
 }
 select {

@@ -147,37 +147,5 @@
     console.log("Annecdote: " + anecdote);
     anecdote = anecdote.replace(/(\r\n|\n|\r)/gm,"");
     anecdoteOutput.innerHTML = anecdote;
-    
-    /*
-    words = template.split(" ");
-    console.log(name);
-    words = words.map(function(word) {
-      if (word === "[name]." || word === "[name]") {
-        word = name;
-      }
-      if (word === "[quality]." || word === "[quality]") {
-        word = quality;
-      }
-      if (gender.charAt(0) === "b") {
-        if (word === "[Her].") {
-          word = "Him.";
-        }
-        if (word === "[her].") {
-          word = "him.";
-        }
-        if (word === "[Her]") {
-          word = "Him";
-        }
-        if (word === "[her]") {
-          word = "him.";
-        }
-      } else {
-
-      }
-      return word;
-    })
-    console.log(words.toString());
-    */
   }
-
 }());
