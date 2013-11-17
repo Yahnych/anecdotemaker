@@ -79,7 +79,7 @@
   function makeAnnecdote() {
     var gender, quality, anecdote, name, words;
 
-    quality = qualityOption.options[qualityOption.selectedIndex].value
+    quality = currentStudent.quality;
     gender = currentStudent.gender;
     name = currentStudent.name;
     console.log("Name: " + name.value);
@@ -116,7 +116,7 @@
       anecdote = anecdote.split("[She]").join("She");
     }
     
-    if (quality === "a") {
+    if (quality === "1") {
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("an excellent");
       anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are well developed");
       anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("a highly imaginative");
@@ -124,7 +124,7 @@
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("an excellent");
       anecdote = anecdote.split("[produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("produced artwork of a high standard and showed an impressive commitment");
     }
-    if (quality === "b") {
+    if (quality === "2") {
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("a very good");
       anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are developing well");
       anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("an imaginative");
@@ -132,7 +132,7 @@
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("a very good");
       anecdote = anecdote.split("[produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("produced good quality work and will continue to improve with practise");
     }
-    if (quality === "c") {
+    if (quality === "3") {
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("a good");
       anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are developing");
       anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("an interesting");
