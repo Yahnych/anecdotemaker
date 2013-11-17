@@ -1,5 +1,5 @@
 /*jshint indent: 2, eqeqeq: true, strict: true, trailing: true, maxlen: 500, browser: true, devel: true*/
-(function() {
+(function () {
   "use strict";
 
   var className, grades, students, studentName,
@@ -12,7 +12,7 @@
   var xhr = new XMLHttpRequest();
   //Use xhr to load the JSON file.
   xhr.open("GET", "data.json", true);
-  xhr.addEventListener("readystatechange", function() {
+  xhr.addEventListener("readystatechange", function () {
     //Check to make sure the file has loaded properly.
     if (xhr.status === 200 && xhr.readyState === 4) {
       //Convert the JSON data file into an ordinary object
@@ -34,8 +34,8 @@
     qualityOption = document.querySelector("#quality");
     customSentence = document.querySelector("#customSentence");
     anecdoteOutput = document.querySelector("#anecdoteOutput");
-    
-    grades.forEach(function(grade) {
+
+    grades.forEach(function (grade) {
       var el = document.createElement("option");
       el.textContent = grade;
       el.value = grade;
@@ -54,7 +54,7 @@
       studentName.removeChild(studentName.firstChild);
     }
     students = data[className.value].students;
-    students.forEach(function(student) {
+    students.forEach(function (student) {
       var el = document.createElement("option");
       el.textContent = student.name;
       el.value = student.name;
@@ -69,7 +69,7 @@
 
   function studentNameHandler() {
     students = data[className.value].students;
-    students.some(function(student) {
+    students.some(function (student) {
       if (student.name === studentName.value) {
         currentStudent = student;
         return true;
@@ -83,13 +83,24 @@
     quality = currentStudent.quality;
     gender = currentStudent.gender;
     name = currentStudent.name;
-    
+
+    //var words = template.match(/[^[\]]+(?=])/g);
+    //console.log("Words: " + words);
+    //var testStr = "This is [an example] of a sentence that has [groups of words] enclosed in [square brackets.]";
+    /*
+    var reSentence = /[^\[]\[([^\]]+)\]|(\w+)/g;
+    var matchObject;
+    var result = [];
+    while (matchObject = reSentence.exec(template))
+      result.push(matchObject[1] || matchObject[2]);
+    console.log(result);
+    */
     //Replace the  [name]
     anecdote = template.split("[name]").join(name);
-    
+
     //Replace the  [quality]
     //anecdote = anecdote.split("[quality]").join(quality);
-    
+
     if (quality === "1") {
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("an excellent");
       anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are well developed");
@@ -114,7 +125,7 @@
       anecdote = anecdote.split("[an excellent, a very good, a good]").join("a good understanding");
       anecdote = anecdote.split("[produced artwork of a high standard and [she] has shown an impressive commitment, produced good quality work this term and [her] art skills will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("shows an ability in art but should remember to maintain focus when in class");
     }
-    
+
     if (gender.charAt(0) === "b") {
       anecdote = anecdote.split("to [her]").join("to him");
       anecdote = anecdote.split("[her]").join("his");
@@ -136,10 +147,10 @@
       anecdote = anecdote.split("[she]").join("she");
       anecdote = anecdote.split("[She]").join("She");
     }
-    
+
     //Build the anecdote
     anecdote += " " + customSentence.value;
-    anecdote = anecdote.replace(/(\r\n|\n|\r)/gm,"");
+    anecdote = anecdote.replace(/(\r\n|\n|\r)/gm, "");
     anecdoteOutput.innerHTML = generalComment + "\n\n" + anecdote;
   }
 }());
