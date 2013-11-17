@@ -1,0 +1,20 @@
+{
+  "5": {
+    "students": [
+      {"name": "Rex", "gender": "boy"},
+      {"name": "Laima", "gender": "girl"},
+      {"name": "Ahren", "gender": "boy"},
+      {"name": "Lina", "gender": "girl"}
+    ],
+   "template": "[name] created [an excellent, a very good, a good] line drawing.  [Her] shading skills [are well developed, are developing well, are developing] and [she] composed [a highly imaginative, an imaginative, an interesting] and [very well constructed, well constructed, acceptably constructed] geometric tower scene. [She] has [an excellent, a very good, a good] understanding of the elements and principles of design. [name] [produced artwork of a high standard and showed an impressive commitment, produced good quality work and will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]."
+  }, 
+  "6": {
+    "students": [
+      {"name": "Another", "gender": "boy"},
+      {"name": "Name", "gender": "girl"},
+      {"name": "To", "gender": "boy"},
+      {"name": "Test", "gender": "girl"}
+    ],
+    "template": "This is 502. The student's name is [name]. [Her] work is [quality]. [She] should try to improve [her] work. [name] is well behaved."
+  }
+}
