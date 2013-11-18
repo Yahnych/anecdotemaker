@@ -6,6 +6,28 @@
     currentStudent, currentClass, template, templateElement,
     button, qualityOption, customSentence, anecdoteOutput, generalComment;
 
+  /*Next: Convert markdown to JSON
+  //Load a markdown document
+  var markdown = "";
+  //Create a new xhr objet.
+  var xhr2 = new XMLHttpRequest();
+  //Use xhr to load the JSON file.
+  xhr2.open("GET", "test.markdown", true);
+  xhr2.addEventListener("readystatechange", function () {
+    //Check to make sure the file has loaded properly.
+    if (xhr2.status === 200 && xhr2.readyState === 4) {
+      //Convert the JSON data file into an ordinary object
+      markdown = xhr2.responseText;
+      console.log("markdown loaded");
+      //var temp = jsonmark.parse(markdown);
+      console.log(temp);
+    }
+  });
+  //Send the request to load the file
+  xhr2.send();
+  */
+  
+  
   //Create an empty object to hold the JSON data.
   var data = {};
   //Create a new xhr objet.

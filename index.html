@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-  </head>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
 
-  <body>
+<body>
   <div id="stage">
-  <div id="left">
-    <h1>Anecdote Maker</h1>
+    <div id="left">
+      <h1>Anecdote Maker</h1>
 
-<form>
-<p><strong>Class</strong><select id="class" name="class"></select></p>
-<p><strong>Name</strong><select id="studentName" name="studentName"></select></p>
-<p><strong>Custom sentence</strong></p>
-<textarea id="customSentence" rows="2" cols="35">
-</textarea>
-<br><br>
-</form>
-<p><strong>Template</strong></p>
-<textarea id="template" rows="20" cols="35">
-The student's name is [name]. [Her] work is [quality]. 
-[She] should try to improve [her] work. 
-[name] is well behaved.
-</textarea>
-</div>
+      <form>
+        <p>
+          <strong>Class</strong>
+          <select id="class" name="class"></select>
+        </p>
+        <p>
+          <strong>Name</strong>
+          <select id="studentName" name="studentName"></select>
+        </p>
+        <p>
+          <strong>Custom sentence</strong>
+        </p>
+        <textarea id="customSentence" rows="2" cols="35">
+        </textarea>
+        <br>
+        <br>
+      </form>
+      <p>
+        <strong>Template</strong>
+      </p>
+      <textarea id="template" rows="20" cols="35">
+        The student's name is [name]. [Her] work is [quality]. [She] should try to improve [her] work. [name] is well behaved.
+      </textarea>
+    </div>
 
-<div id="right">
-<input id="button" type="button" value="Make the anecdote">
-<br>
-<textarea id="anecdoteOutput" rows="50" cols="35">
-The annecdote will appear here...
-</textarea>
-</div>
-</div>
-    <script src="script.js"></script>
-  </body>
+    <div id="right">
+      <input id="button" type="button" value="Make the anecdote">
+      <br>
+      <textarea id="anecdoteOutput" rows="50" cols="35">
+        The annecdote will appear here...
+      </textarea>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 
 </html>
