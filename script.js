@@ -78,54 +78,17 @@
   }
 
   function makeAnnecdote() {
-    var gender, quality, anecdote, name;
+    var gender, quality, anecdote, name, matches, stringArrays;
 
     quality = currentStudent.quality;
     gender = currentStudent.gender;
     name = currentStudent.name;
 
-    //var words = template.match(/[^[\]]+(?=])/g);
-    //console.log("Words: " + words);
-    //var testStr = "This is [an example] of a sentence that has [groups of words] enclosed in [square brackets.]";
-    /*
-    var reSentence = /[^\[]\[([^\]]+)\]|(\w+)/g;
-    var matchObject;
-    var result = [];
-    while (matchObject = reSentence.exec(template))
-      result.push(matchObject[1] || matchObject[2]);
-    console.log(result);
-    */
     //Replace the  [name]
+    //anecdote = template.replace(/\[name\]/g, name);
     anecdote = template.split("[name]").join(name);
 
-    //Replace the  [quality]
-    //anecdote = anecdote.split("[quality]").join(quality);
-
-    if (quality === "1") {
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("an excellent");
-      anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are well developed");
-      anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("a highly imaginative");
-      anecdote = anecdote.split("[very well constructed, well constructed, acceptably constructed]").join("very well constructed");
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("an excellent");
-      anecdote = anecdote.split("[produced artwork of a high standard and [she] has shown an impressive commitment, produced good quality work this term and [her] art skills will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("produced artwork of a high standard and [she] has shown an impressive commitment");
-    }
-    if (quality === "2") {
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("a very good");
-      anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are developing well");
-      anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("an imaginative");
-      anecdote = anecdote.split("[very well constructed, well constructed, acceptably constructed]").join("well constructed");
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("a very good");
-      anecdote = anecdote.split("[produced artwork of a high standard and [she] has shown an impressive commitment, produced good quality work this term and [her] art skills will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("produced good quality work this term and [her] art skills will continue to improve with practise");
-    }
-    if (quality === "3") {
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("a good");
-      anecdote = anecdote.split("[are well developed, are developing well, are developing]").join("are developing");
-      anecdote = anecdote.split("[a highly imaginative, an imaginative, an interesting]").join("an interesting");
-      anecdote = anecdote.split("[very well constructed, well constructed, acceptably constructed]").join("acceptably constructed");
-      anecdote = anecdote.split("[an excellent, a very good, a good]").join("a good understanding");
-      anecdote = anecdote.split("[produced artwork of a high standard and [she] has shown an impressive commitment, produced good quality work this term and [her] art skills will continue to improve with practise, shows an ability in art but should remember to maintain focus when in class]").join("shows an ability in art but should remember to maintain focus when in class");
-    }
-
+    //Set the correct gender
     if (gender.charAt(0) === "b") {
       anecdote = anecdote.split("to [her]").join("to him");
       anecdote = anecdote.split("[her]").join("his");
@@ -147,6 +110,32 @@
       anecdote = anecdote.split("[she]").join("she");
       anecdote = anecdote.split("[She]").join("She");
     }
+
+    //Now we need to customize the quality messages
+    //1. Find all the text in square brackets and convert them to arrays
+    matches = anecdote.match(/\[(.*?)\]/g);
+
+    //2. Convert each submatch into an array of strings
+    stringArrays = matches.map(function (match) {
+      match = match.slice(1, -1).split(/\s*,\s*/);
+      return match;
+    });
+    //console.log(matches);
+    //If the stringArrays have more than one element, then we
+    //know that it contains some options
+    stringArrays.forEach(function (stringArray, index) {
+      if (stringArray.length !== 0) {
+        //This is the fun part
+        //a. Get a reference to the original string that's 
+        //surrounded by square brackets
+        var originalString = matches[index];
+        //b. Select the element from the new stringArray that matches
+        //the student's quality (1,2, or 5)
+        var newString = stringArray[quality - 1];
+        //c. Replace the orginalString with the newString
+        anecdote = anecdote.split(originalString).join(newString);
+      }
+    });
 
     //Build the anecdote
     anecdote += " " + customSentence.value;
